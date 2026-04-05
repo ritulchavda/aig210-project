@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gesture Tetris Controller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <h1>Vision-Controlled Tetris</h1>
+        <p>Control the game with 6 live hand gestures</p>
+      </header>
+
+      <main class="panel-wrap">
+        <section class="panel camera-panel">
+          <h2>Camera Feed</h2>
+          <canvas id="cameraCanvas" width="640" height="480"></canvas>
+          <div class="camera-meta">
+            <div class="meta-card">
+              <span>Current Gesture</span>
+              <strong id="gestureLabel">None</strong>
+            </div>
+            <div class="meta-card">
+              <span>Hand Status</span>
+              <strong id="handStatus">No hand detected</strong>
+            </div>
+            <div class="meta-card">
+              <span>System</span>
+              <strong id="systemStatus">Idle</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="divider" aria-hidden="true"></section>
+
+        <section class="panel game-panel">
+          <h2>Tetris Game</h2>
+          <div class="game-stage">
+            <canvas id="gameCanvas" width="300" height="600"></canvas>
+            <aside class="hud">
+              <div class="hud-card">
+                <span>Score</span>
+                <strong id="scoreValue">0</strong>
+              </div>
+              <div class="hud-card">
+                <span>Lines</span>
+                <strong id="linesValue">0</strong>
+              </div>
+              <div class="hud-card">
+                <span>Level</span>
+                <strong id="levelValue">1</strong>
+              </div>
+              <div class="hud-card">
+                <span>Game State</span>
+                <strong id="gameState">Waiting</strong>
+              </div>
+              <div class="controls-note">
+                <p><strong>RIGHT HAND:</strong></p>
+                <p>Two Fingers (Index + Middle): Rotate</p>
+                <p>Index: Hard Drop</p>
+                <p>Left/Right Flick: Move</p>
+                <p>Down Flick: Soft Drop</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <div class="button-row">
+        <button id="startButton" class="start-button">Start System</button>
+        <button id="pauseButton" class="start-button" disabled>Pause Game</button>
+      </div>
+      <video id="cameraVideo" autoplay muted playsinline></video>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
