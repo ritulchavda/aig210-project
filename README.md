@@ -21,10 +21,7 @@ A browser-based Tetris game controlled by live hand gestures using MediaPipe Han
 
 ## Gesture Mapping & Hand Requirements
 
-### Left Hand Only
-- **Palm 🤚**: Pause/Resume game
-
-### Right Hand Only
+- **Palm 🤚**: Neutral State
 - **Two Fingers (Index + Middle)**: Rotate piece
 - **Index ☝**: Hard drop
 - **Left flick 🫲**: Move piece left
